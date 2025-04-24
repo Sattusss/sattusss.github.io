@@ -431,11 +431,11 @@
                         </span>
                     </div>
                 <div class="contact__container bd-grid">
-                    <form action="" class="contact__form">
-                        <input type="text" placeholder="Name" class="contact__input">
-                        <input type="mail" placeholder="Email" class="contact__input">
-                        <textarea name="" id="" cols="0" rows="10" class="contact__input"></textarea>
-                        <input type="button" value="Send Message" class="contact__button">
+                    <form action="https://formspree.io/f/xdkgobjk" method="POST" class="contact__form">
+                        <input type="text" name="name" placeholder="Name" class="contact__input" required>
+                        <input type="email" name="email" placeholder="Email" class="contact__input" required>
+                        <textarea name="message" cols="0" rows="10" placeholder="Your Message" class="contact__input" required></textarea>
+                        <input type="submit" value="Send Message" class="contact__button">
                     </form>
                 </div>
             </section>
