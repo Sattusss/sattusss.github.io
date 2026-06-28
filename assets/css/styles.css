@@ -45,6 +45,20 @@
   --z-fixed: 100;
 }
 
+
+.linkedin-badge-wrapper {
+  margin: 1rem 0 1.5rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (min-width: 768px) {
+  .linkedin-badge-wrapper {
+    justify-content: flex-start;
+  }
+}
+
+
 /*===== BASE =====*/
 *,::before,::after{
   box-sizing: border-box;

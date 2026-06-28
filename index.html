@@ -1,544 +1,240 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Satyam Tiwari - AI / LLM / ML Engineer & Data Scientist in Tokyo. Production NLP, speech (ASR/TTS), multilingual LLM and RAG systems. Bilingual EN / 日本語 portfolio.">
+  <meta name="keywords" content="AI Engineer, LLM Engineer, Machine Learning Engineer, Data Scientist, NLP, RAG, ASR, TTS, PyTorch, Transformers, LangChain, Tokyo">
+  <meta name="author" content="Satyam Tiwari">
 
-        <link rel="stylesheet" href="assets/css/styles.css">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Satyam Tiwari - AI · LLM · ML Engineer">
+  <meta property="og:description" content="Production NLP, speech & multilingual LLM systems. Based in Tokyo, bilingual JP/EN.">
 
-        <link href='https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css' rel='stylesheet'>
+  <title>Satyam Tiwari - AI · LLM · ML Engineer</title>
+  <link rel="shortcut icon" href="assets/img/S.png">
 
-        <link rel="shortcut icon" href="assets/img/S.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
-        <title>Satyam Tiwari</title>
-    </head>
-    <body>
-        <!--===== HEADER =====-->
-        <header class="l-header" style="background-color: #1c3747;">
-            <nav class="nav bd-grid">
-                <div>
-                    <a href="" class="nav__logo" style="color: white;">Satyam</a>
-                </div>
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+</head>
+<body>
+  <!-- backgrounds -->
+  <div class="bg-aurora"><span class="b1"></span><span class="b2"></span><span class="b3"></span></div>
+  <div class="bg-grid"></div>
+  <div class="spotlight" id="spotlight"></div>
+  <div class="scrollbar" id="scrollbar"></div>
 
-                <div class="nav__menu" id="nav-menu" >
-                    <ul class="nav__list">
-                        <li class="nav__item"><a href="#home" class="nav__link active" style="color: white;">Home</a></li>
-                        <li class="nav__item"><a href="#about" class="nav__link" style="color: white;">About</a></li>
-                        <li class="nav__item"><a href="#work" class="nav__link" style="color: white;">Work</a></li>
-                        <li class="nav__item"><a href="#skills" class="nav__link" style="color: white;">Skills</a></li>
-                        <li class="nav__item"><a href="#project" class="nav__link" style="color: white;">Projects</a></li>
-                        <li class="nav__item"><a href="#contact" class="nav__link" style="color: white;">Contacts</a></li>
-                    </ul>
-                </div>
+  <!-- ===== NAV ===== -->
+  <header class="nav" id="nav">
+    <div class="container nav__inner">
+      <a href="#home" class="brand">
+        <span class="logo">ST</span>
+        <span>Satyam Tiwari<small data-i18n="brand.sub">AI · LLM · ML Engineer</small></span>
+      </a>
 
-                <div class="nav__toggle" id="nav-toggle" style="color: white;">
-                    <i class='bx bx-menu'></i>
-                </div>
-            </nav>
-        </header>
+      <nav class="nav__links" id="nav-links">
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a href="#skills" data-i18n="nav.skills">Skills</a>
+        <a href="#experience" data-i18n="nav.experience">Experience</a>
+        <a href="#projects" data-i18n="nav.projects">Projects</a>
+        <a href="#education" data-i18n="nav.education">Education</a>
+        <a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
 
-        <!--===== HOME =====-->
-        <main class="l-main">
-            <section class="home bd-grid" id="home">
-                <div class="home__data">
-                    <h1 class="home__title" style="margin-top: 11%;">Hi, I'm <span class="home__title-color" style="display: inline-block;">Satyam Tiwari</span><br>Data Scientist, at</h1><img src="assets/img/git.png" alt="" style="height: 15%; width: 45%; display: inline-block; margin-left: -1.5%;">
-                    <br /><br />
+      <div class="nav__right">
+        <div class="lang" id="lang-toggle" title="Switch language">
+          <span class="pill"></span>
+          <button data-lang="en" class="on">EN</button>
+          <button data-lang="ja">日本語</button>
+        </div>
+        <button class="nav__burger" id="burger" aria-label="Menu"><span></span></button>
+      </div>
+    </div>
+  </header>
 
-                    <a href="https://drive.google.com/file/d/1SHfRGM4IXKu2OO43Nw-0tRAAIIo9Y7It/view?usp=sharing" target="blank" class="button">English Resume</a>
-                    <a href="https://drive.google.com/file/d/1yRI6DlMlc81diJRNtuc8IHJWyIZzDzPm/view?usp=sharing" target="blank" class="button">Japanese Resume (履歴書)</a>
-                    <a href="https://drive.google.com/file/d/16hFI2tFs-U26Sn5j3LWVYNYT2TqIaRqe/view?usp=sharing" target="blank" class="button">職務経歴書</a>
-                </div>                
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="home">
+    <div class="container hero__grid">
+      <div class="hero__text">
+        <!-- Status badge hidden (started a new role) - uncomment to re-enable
+        <span class="hero__status" data-reveal><i class="dot-live"></i><span data-i18n="hero.status">Open to AI / LLM / ML Engineer roles</span></span>
+        -->
+        <h1 data-reveal data-delay="1">
+          <span data-i18n="hero.hi">Hi, I'm</span> <span class="wave">👋</span><br>
+          <span class="text-grad">Satyam Tiwari</span>
+        </h1>
+        <div class="hero__role" data-reveal data-delay="2"><span class="typed" id="typed"></span><span class="caret"></span></div>
+        <p class="hero__lead" data-reveal data-delay="2" data-i18n="hero.lead"></p>
+        <div class="hero__tags" data-reveal data-delay="3">
+          <span># RAG</span><span># Multilingual NLP</span><span># ASR / TTS</span><span># LLM Orchestration</span><span># PyTorch</span>
+        </div>
+        <div class="hero__cta" data-reveal data-delay="3">
+          <a href="#projects" class="btn btn-primary"><span data-i18n="hero.cta1">View My Work</span></a>
+          <a href="assets/Satyam_Tiwari_Resume.pdf" target="_blank" class="btn btn-ghost"><span data-icon="download"></span><span data-i18n="hero.cta2">Download Résumé</span></a>
+        </div>
+        <div class="hero__socials" data-reveal data-delay="4">
+          <a href="https://github.com/Sattusss" target="_blank" rel="noopener" title="GitHub" data-icon="github"></a>
+          <a href="https://www.linkedin.com/in/satyam-tiwari-70210a22b" target="_blank" rel="noopener" title="LinkedIn" data-icon="linkedin"></a>
+          <a href="https://x.com/_satyam_345" target="_blank" rel="noopener" title="X" data-icon="twitter"></a>
+          <a href="https://www.instagram.com/thesatyamtiwarii/" target="_blank" rel="noopener" title="Instagram" data-icon="instagram"></a>
+          <a href="mailto:itssatyam.345@gmail.com" title="Email" data-icon="mail"></a>
+        </div>
+      </div>
 
-                <div class="home__social" style="margin-top: 2%;">
-                    <a href="https://www.linkedin.com/in/satyam-tiwari-70210a22b/" target="blank" class="home__social-icon"><i class='bx bxl-linkedin'></i>Linkedin</a>
-                    <a href="https://github.com/Sattusss" target="blank" class="home__social-icon"><i class='bx bxl-github' ></i>Github</a>
-                    <a href="https://leetcode.com/satyamtiwari345/" target="blank" class="home__social-icon"><span class="iconify" data-icon="simple-icons:leetcode"></span> Leet Code</a>
-                    <a href="https://www.hackerrank.com/itssatyam_345/" target="blank" class="home__social-icon"><span class="iconify" data-icon="simple-icons:hackerrank"></span>HackerRank</a>
-                    <a href="https://www.instagram.com/thesatyamtiwarii/" target="blank" class="home__social-icon"><span class="iconify" data-icon="simple-icons:instagram"></span>Instagram</a>
-                    <a href="https://x.com/_satyam_345" target="blank" class="home__social-icon"><span class="iconify" data-icon="simple-icons:x"></span>X</a>
-                    <a href="https://www.facebook.com/sattusss/" target="blank" class="home__social-icon"><span class="iconify" data-icon="simple-icons:facebook"></span>Facebook</a>
-                </div>
+      <div class="hero__art" data-reveal data-delay="2">
+        <div class="portrait">
+          <div class="portrait__ring"></div>
+          <div class="portrait__img"><img src="assets/img/about.png" alt="Satyam Tiwari"></div>
+          <div class="chip-float c1"><i></i> RAG · LangChain</div>
+          <div class="chip-float c2"><i></i> Whisper · VITS</div>
+          <div class="chip-float c3"><i></i> Gemini · Claude</div>
+          <div class="chip-float c4"><i></i> PyTorch</div>
+        </div>
+      </div>
+    </div>
 
-            </section>
+    <div class="container">
+      <div class="stats" id="stats"></div>
+    </div>
+  </section>
 
-            <br /><br /><br /><br /><br /><br /><br />
+  <!-- marquee -->
+  <div class="marquee" id="marquee"></div>
 
-            <!--===== ABOUT =====-->
-            <section class="about section " id="about">
-                <h2 class="section-title">About</h2>
+  <!-- ===== ABOUT ===== -->
+  <section id="about">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="about.eyebrow">About Me</span>
+        <h2 class="section-title" data-i18n="about.title">Turning AI research into shipped products</h2>
+      </div>
+      <div class="about__grid">
+        <div class="about" data-reveal>
+          <p data-i18n="about.p1"></p>
+          <p data-i18n="about.p2"></p>
+          <p data-i18n="about.p3"></p>
+          <div class="about__card" style="margin-top:8px">
+            <ul class="about__list">
+              <li><span class="ic" data-icon="pin"></span><span><b data-i18n="about.l1t">Based in</b><span data-i18n="about.l1d">Tokyo, Japan</span></span></li>
+              <li><span class="ic" data-icon="ml"></span><span><b data-i18n="about.l2t">Currently</b><span data-i18n="about.l2d">Data Scientist @ Human Resocia</span></span></li>
+              <li><span class="ic" data-icon="nlp"></span><span><b data-i18n="about.l3t">Focus</b><span data-i18n="about.l3d">NLP · Speech · LLM · RAG</span></span></li>
+              <li><span class="ic" data-icon="cap"></span><span><b data-i18n="about.l4t">Education</b><span data-i18n="about.l4d">M.C.A (IT) · Amity University</span></span></li>
+            </ul>
+          </div>
+        </div>
+        <div class="about__card" data-reveal data-delay="1">
+          <h3 style="font-family:var(--font-head);color:var(--heading);margin-bottom:18px;display:flex;align-items:center;gap:10px"><span class="skill-card__ic" style="width:38px;height:38px" data-icon="chat"></span><span data-i18n="about.langtitle">Languages</span></h3>
+          <div class="lang-bars" id="lang-bars"></div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="about__container bd-grid">
-                    <div class="about__img">
-                        <img src="assets/img/about.jpg" alt="">
-                    </div>
-                    <div>
-                        <h2 class="about__subtitle">I'm Satyam</h2>
-                        <p class="about__text">
-                            <ul style="list-style-type: square; margin-left: 6%;">
-                                <li style="margin-bottom: 2%;">Data Scientist @ Human Resocia Co. Ltd, Tokyo, Japan</li>
-                                <li style="margin-bottom: 2%;">Master of Computer Applications (MCA), 2023 @ Dr. Ram Manohar Lohia Awadh University, Ayodhya, UP</li>
-                                <li style="margin-bottom: 2%;">Bachelor of Science (Mathematics), 2021 @ Amity University, Lucknow, UP</li>
-                                <li style="margin-bottom: 2%;">Solved 50+ problems on LeetCode (Python, Data Structures, Algorithms)</li>
-                                <li style="margin-bottom: 2%;">Certified in Data Analysis with R Programming (Google)</li>
-                                <li style="margin-bottom: 2%;">Certified in Data Science with Python (IBM)</li>
-                                <li style="margin-bottom: 2%;">Certified in Python for Data Science, AI, and Development (IBM)</li>
-                                <li style="margin-bottom: 2%;">Certified in Cisco Certified Network Associate (CCNA)</li>
-                                <li style="margin-bottom: 2%;">Certified in SQL, SQL Server, and DBMS (Oracle)</li>
-                            </ul>
-                        </p>
-                    </div>                                   
-                </div>
-            </section>
-            <br /><br /><br /><br />
+  <!-- ===== SKILLS ===== -->
+  <section id="skills">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="skills.eyebrow">Tech Stack</span>
+        <h2 class="section-title" data-i18n="skills.title">Skills &amp; Tools</h2>
+        <p class="section-sub" data-i18n="skills.sub"></p>
+      </div>
+      <div class="skills__grid" id="skills-grid"></div>
+    </div>
+  </section>
 
-            <section class="about section" id="work">
-            <h2 class="section-title">Work</h2>
+  <!-- ===== EXPERIENCE ===== -->
+  <section id="experience">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="exp.eyebrow">Career</span>
+        <h2 class="section-title" data-i18n="exp.title">Work Experience</h2>
+        <p class="section-sub" data-i18n="exp.sub"></p>
+      </div>
+      <div class="timeline" id="timeline"></div>
+    </div>
+  </section>
 
-            <div class="about__container bd-grid">
-                <div class="about__img">
-                    <a href="https://gitcareer.resocia.jp/" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/img/hitachi.png" alt="GitCareer by Resocia">
-                    </a>
-                </div>
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="proj.eyebrow">Portfolio</span>
+        <h2 class="section-title" data-i18n="proj.title">Featured Projects</h2>
+        <p class="section-sub" data-i18n="proj.sub"></p>
+      </div>
+      <div class="filters" id="filters">
+        <button class="active" data-f="all" data-i18n="f.all">All</button>
+        <button data-f="llm" data-i18n="f.llm">LLM &amp; RAG</button>
+        <button data-f="nlp" data-i18n="f.nlp">NLP &amp; Speech</button>
+        <button data-f="ml" data-i18n="f.ml">ML &amp; CV</button>
+        <button data-f="data" data-i18n="f.data">Data &amp; BI</button>
+      </div>
+      <div class="projects__grid" id="projects-grid"></div>
+    </div>
+  </section>
 
-                <div>
-                    <h2 class="about__subtitle">AI Engineer - Project 1</h2>
-                    <p class="about__text">
-                        Worked on <b>"Voice interface system with real-time speech recognition (ASR) and text-to-speech (TTS) for structured data entry."</b>
-                    </p>
-                    <ul style="list-style-type: disc; padding-left: 5%;">
-                        <li style="font-size: 13px; margin-bottom: 2%; margin-top: 2%;">
-                        Implemented voice-triggered commands like <b>“Delete”</b> for data deletion and <b>“Delete All”</b> for full reset.
-                        </li>
-                        <li style="font-size: 13px; margin-bottom: 2%;">
-                        Built TTS confirmation features using <b>VITS</b> and <b>pyttsx3</b> for accurate data mapping (e.g., “SIGNAL 32”).
-                        </li>
-                        <li style="font-size: 13px; margin-bottom: 2%;">
-                        Developed a user-friendly interface with <b>Streamlit</b> for live recording, playback, and data visualization.
-                        </li>
-                        <li style="font-size: 13px;">
-                        <b>Python&emsp;&emsp;Streamlit&emsp;&emsp;Faster-Whisper&emsp;&emsp;VITS</b>
-                        </li>
-                    </ul>
-                </div>
+  <!-- ===== EDUCATION ===== -->
+  <section id="education">
+    <div class="container">
+      <div class="section-head">
+        <span class="eyebrow" data-i18n="edu.eyebrow">Background</span>
+        <h2 class="section-title" data-i18n="edu.title">Education &amp; Certifications</h2>
+      </div>
+      <div class="edu__grid">
+        <div class="edu-card" data-reveal>
+          <h3><span data-icon="cap"></span><span data-i18n="edu.degrees">Education</span></h3>
+          <div id="edu-degrees"></div>
+        </div>
+        <div class="edu-card" data-reveal data-delay="1">
+          <h3><span data-icon="award"></span><span data-i18n="edu.certs">Certifications</span></h3>
+          <ul class="cert-list" id="edu-certs"></ul>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div class="about__img">
-                    <a href="https://gitcareer.resocia.jp/" target="_blank" rel="noopener noreferrer">
-                        <img src="assets/img/nec.png" alt="GitCareer by Resocia">
-                    </a>
-                </div>
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact__card" data-reveal>
+        <div class="contact__inner">
+          <span class="eyebrow" data-i18n="contact.eyebrow">Get in touch</span>
+          <h2 data-i18n="contact.title">Let's build something intelligent</h2>
+          <p data-i18n="contact.sub"></p>
+          <div class="contact__cta">
+            <a href="mailto:itssatyam.345@gmail.com" class="btn btn-primary"><span data-icon="mail"></span><span data-i18n="contact.cta1">Email Me</span></a>
+            <a href="https://www.linkedin.com/in/satyam-tiwari-70210a22b" target="_blank" rel="noopener" class="btn btn-ghost"><span data-icon="linkedin"></span><span data-i18n="contact.cta2">LinkedIn</span></a>
+          </div>
+          <div class="contact__meta">
+            <a href="mailto:itssatyam.345@gmail.com"><span data-icon="mail"></span>itssatyam.345@gmail.com</a>
+            <a href="tel:+817040808649"><span data-icon="phone"></span>+81 70-4080-8649</a>
+            <span><span data-icon="pin"></span>Tokyo, Japan</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
-                <div>
-                    <h2 class="about__subtitle">ML Engineer — Project 2</h2>
-                    <p class="about__text">
-                        Worked on <b>"AI-based Electronic Medical Record (EMR) analysis and automation system"</b>, focusing on transforming unstructured Japanese medical text into structured data using <b>LLMs</b> and deep learning models.
-                    </p>
-                    <ul style="list-style-type: disc; padding-left: 5%;">
-                        <li style="font-size: 13px; margin-bottom: 2%;">
-                        Developed and evaluated multiple models (<b>Transformer, LSTM</b>, etc.) for <b>disease progression prediction</b>, <b>semantic text similarity</b>, and <b>medical text classification</b>.
-                        </li>
-                        <li style="font-size: 13px; margin-bottom: 2%;">
-                        Implemented <b>KNN-based similarity scoring</b> pipelines using <b>embedding models</b> like <b>Ada-002, Cohere, and Amazon Titan</b>, focusing on Japanese terms such as <b>“悪化” (deterioration)</b>.
-                        </li>
-                        <li style="font-size: 13px; margin-bottom: 2%;">
-                        Performed <b>one-by-one similarity evaluations</b> between “総評” (general evaluation) and “深堀視点” (detailed viewpoint) texts to ensure semantic alignment.
-                        </li>
-                        <li style="font-size: 13px; margin-bottom: 2%;">
-                        Built two <b>visualization modules</b> for model comparison and embedding analysis, improving interpretability of KPI-based results.
-                        </li>
-                        <li style="font-size: 13px; margin-bottom: 2%;">
-                        Completed <b>Pyvis visualization task</b> — developed an <b>interactive causal graph</b> from JSON data (<b>graph-multivar-permute-cond2-simple4-v2-sonnet.json</b>) using
-                        <b>Pyvis</b>, visualizing <b>pos_corr/neg_corr</b>, <b>pos_edge/neg_edge</b>, <b>reasons</b>, and <b>coefs</b> for LLM-based causal reasoning analysis.
-                        </li>
-                        <li style="font-size: 13px; margin-bottom: 2%;">
-                        Enabled switching between <b>correlation</b> and <b>direct-effect</b> modes, displaying <b>LLM explanations</b> and <b>regression weights</b> interactively via HTML.
-                        </li>
-                        <li style="font-size: 13px; margin-bottom: 2%;">
-                        Collaborated with NEC’s <b>medical AI research team</b> to analyze datasets (<b>input_12.csv</b>, <b>input_42.csv</b>, <b>input_batch_42.csv</b>, <b>Canned_trend_annotation.csv</b>) and
-                        produce evaluation reports with <b>visual similarity insights</b>.
-                        </li>
-                        <li style="font-size: 13px;">
-                        <b>Python&emsp;&emsp;PyTorch&emsp;&emsp;TensorFlow&emsp;&emsp;Amazon Bedrock&emsp;&emsp;Pyvis&emsp;&emsp;Pandas&emsp;&emsp;NumPy</b>
-                        </li>
-                    </ul>
-                </div>
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <p>© <span id="year"></span> Satyam Tiwari · <span data-i18n="footer.rights">Built with curiosity in Tokyo.</span></p>
+      <div class="footer__socials">
+        <a href="https://github.com/Sattusss" target="_blank" rel="noopener" title="GitHub" data-icon="github"></a>
+        <a href="https://www.linkedin.com/in/satyam-tiwari-70210a22b" target="_blank" rel="noopener" title="LinkedIn" data-icon="linkedin"></a>
+        <a href="https://x.com/_satyam_345" target="_blank" rel="noopener" title="X" data-icon="twitter"></a>
+        <a href="https://www.facebook.com/sattusss" target="_blank" rel="noopener" title="Facebook" data-icon="facebook"></a>
+        <a href="https://www.instagram.com/thesatyamtiwarii/" target="_blank" rel="noopener" title="Instagram" data-icon="instagram"></a>
+      </div>
+    </div>
+  </footer>
 
-                <div class="about__img">
-                <a href="https://www.linkedin.com/company/itanddigitalmarketinginternship2023/" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/img/digipodium.jpg" alt="Digipodium LinkedIn">
-                </a>
-                </div>
+  <button class="totop" id="totop" aria-label="Back to top" data-icon="up"></button>
 
-                <div>
-                <h2 class="about__subtitle">Python Developer, Intern</h2>
-                <p class="about__text">
-                    <span style="font-size: 14px;">Jan '23 – May '23</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <span style="font-size: 14px;">Lucknow, UP</span>
-                </p>
-                <p class="about__text">
-                    Worked on <b>"Voice-based email system for visually impaired users"</b>
-                </p>
-                <ul style="list-style-type: disc; padding-left: 5%;">
-                    <li style="font-size: 13px; margin-bottom: 2%; margin-top: 2%;">
-                    Developed a hands-free email authoring and sending system using <b>speech recognition</b> and <b>Google Mail API</b>.
-                    </li>
-                    <li style="font-size: 13px; margin-bottom: 2%;">
-                    Integrated voice commands for composing emails, inbox navigation, and login functionalities.
-                    </li>
-                    <li style="font-size: 13px; margin-bottom: 2%;">
-                    Designed a user-friendly front end with <b>HTML, CSS, JavaScript, Bootstrap</b>.
-                    </li>
-                    <li style="font-size: 13px;">
-                    <b>Python&emsp;&emsp;Django&emsp;&emsp;SMTP&emsp;&emsp;HTML</b>
-                    </li>
-                </ul>
-                </div>
-            </div>
-
-            <!-- Spacer (consider replacing with CSS margin in production) -->
-            <br><br><br><br><br>
-
-            <div class="about__container bd-grid">
-                <div class="about__img">
-                <a href="https://digipodium.com/" target="_blank" rel="noopener noreferrer">
-                    <img src="assets/img/digipodium.jpg" alt="Digipodium">
-                </a>
-                </div>
-
-                <div>
-                <h2 class="about__subtitle">Python Developer, Intern</h2>
-                <p class="about__text">
-                    <span style="font-size: 14px;">Jun '22 – Sep '22</span>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-                    <span style="font-size: 14px;">Lucknow, UP</span>
-                </p>
-                <p class="about__text">
-                    Worked on <b>"AI-based object detection system for visually impaired users"</b>
-                </p>
-                <ul style="list-style-type: disc; padding-left: 5%;">
-                    <li style="font-size: 13px; margin-bottom: 2%; margin-top: 2%;">
-                    Developed a real-time object detection solution using <b>TensorFlow</b> and <b>OpenCV</b>.
-                    </li>
-                    <li style="font-size: 13px; margin-bottom: 2%;">
-                    Enabled voice-guided object identification to assist visually impaired individuals in daily navigation.
-                    </li>
-                    <li style="font-size: 13px; margin-bottom: 2%;">
-                    Designed a user interface with <b>Streamlit</b> and managed database schema updates in <b>SQL Server</b>.
-                    </li>
-                    <li style="font-size: 13px;">
-                    <b>Python&emsp;&emsp;TensorFlow&emsp;&emsp;OpenCV&emsp;&emsp;Streamlit</b>
-                    </li>
-                </ul>
-                </div>
-            </div>
-            </section>
-
-            <!--===== SKILLS =====-->
-            <section class="skills section" id="skills">
-                <h2 class="section-title">Skills</h2>
-                <br /><br />
-
-            <div class="skillss">
-                <div class="skills__skill">Python</div>
-                <div class="skills__skill">SQL (MySQL, SQL Server)</div>
-                <div class="skills__skill">Linux</div>
-                <div class="skills__skill">Excel</div>
-                <div class="skills__skill">CCNA</div>
-                <div class="skills__skill">Cisco Packet Tracer</div>
-            </div>
-
-            <br />
-
-            <div class="skillss">
-                <div class="skills__skill">Data Science</div>
-                <div class="skills__skill">Data Analysis</div>
-                <div class="skills__skill">Data Visualization (Power BI, Matplotlib, Pyvis)</div>
-                <div class="skills__skill">Data Cleaning</div>
-                <div class="skills__skill">Machine Learning</div>
-                <div class="skills__skill">Deep Learning</div>
-            </div>
-
-            <br />
-
-            <div class="skillss">
-                <div class="skills__skill">Natural Language Processing (NLP)</div>
-                <div class="skills__skill">Large Language Models (LLMs)</div>
-                <div class="skills__skill">Transformers</div>
-                <div class="skills__skill">LangChain</div>
-                <div class="skills__skill">CTransformers</div>
-                <div class="skills__skill">Amazon Bedrock</div>
-            </div>
-
-            <br />
-
-            <div class="skillss">
-                <div class="skills__skill">PyTorch</div>
-                <div class="skills__skill">TensorFlow</div>
-                <div class="skills__skill">OpenCV</div>
-                <div class="skills__skill">Faster Whisper (ASR)</div>
-                <div class="skills__skill">VITS (TTS)</div>
-                <div class="skills__skill">pyttsx3</div>
-            </div>
-
-            <br />
-
-            <div class="skillss">
-                <div class="skills__skill">Streamlit</div>
-                <div class="skills__skill">Flask</div>
-                <div class="skills__skill">Django</div>
-                <div class="skills__skill">HTML</div>
-                <div class="skills__skill">CSS</div>
-                <div class="skills__skill">JavaScript</div>
-            </div>
-
-            <br />
-
-            <div class="skillss">
-                <div class="skills__skill">Git & GitLab</div>
-                <div class="skills__skill">Docker</div>
-                <div class="skills__skill">VS Code</div>
-                <div class="skills__skill">Jupyter Notebook</div>
-                <div class="skills__skill">Power BI</div>
-                <div class="skills__skill">Presentation & Public Speaking</div>
-            </div>
-            </section>
-
-
-            <br /><br /><br />
-
-            <!--===== WORK =====-->
-            <section class="work section" id="project">
-                <h2 class="section-title">Projects</h2>
-            
-                <div class="work__container bd-grid">
-            
-                    <!-- Vision Correction -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Vision Correction and Enhancement using Computer Vision Technology</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;">
-                            <img src="assets/img/work1.png" alt="">
-                        </div>
-                        <br />
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="https://github.com/Sattusss/Vision-correction-and-enhancement-using-computer-vision-technology" target="blank">
-                                <strong>Source Code</strong>
-                            </a>
-                        </div>
-                        <p style="margin: 20px; font-size: small; font-weight: bold;">
-                            Python-based system detecting objects and communicating their names to visually impaired users in real-time.
-                        </p>
-                        <p style="margin: 20px; font-size: small;">
-                            <b>Python, TensorFlow, TensorFlow Hub, OpenCV, Streamlit, PySimpleGUI</b>
-                        </p>
-                    </div>
-            
-                    <!-- Amazon Price Prediction -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Amazon Price Prediction</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;">
-                            <img src="assets/img/work2.png" alt="">
-                        </div>
-                        <br />
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="https://github.com/Sattusss/AMZN-Prediction" target="blank">
-                                <strong>Source Code</strong>
-                            </a>
-                        </div>
-                        <p style="margin: 20px; font-size: small; font-weight: bold;">
-                            Predicted Amazon stock prices using deep learning LSTM algorithm for financial forecasting.
-                        </p>
-                        <p style="margin: 20px; font-size: small;">
-                            <b>Python, Jupyter Notebook, Matplotlib, LSTM, Deep Learning</b>
-                        </p>
-                    </div>
-            
-                    <!-- Digit Detection -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Digit Detection</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;">
-                            <img src="assets/img/work3.png" alt="">
-                        </div>
-                        <br />
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="https://github.com/Sattusss/Digit_detection" target="blank">
-                                <strong>Source Code</strong>
-                            </a>
-                        </div>
-                        <p style="margin: 20px; font-size: small; font-weight: bold;">
-                            Handwritten digit detection using machine learning techniques.
-                        </p>
-                        <p style="margin: 20px; font-size: small;">
-                            <b>Python, Jupyter Notebook, Google Colab</b>
-                        </p>
-                    </div>
-            
-                    <!-- Voice-based Email -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Voice-based Email for Visually Challenged People</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;">
-                            <img src="assets/img/work4.png" alt="">
-                        </div>
-                        <br />
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="https://github.com/Sattusss/Voice-Based-email-for-Visually-Challenged-people" target="blank">
-                                <strong>Source Code</strong>
-                            </a>
-                        </div>
-                        <p style="margin: 20px; font-size: small; font-weight: bold;">
-                            Enables visually impaired users to send and receive emails via voice commands.
-                        </p>
-                        <p style="margin: 20px; font-size: small;">
-                            <b>Python, Django, Text-to-Speech, HTML, CSS</b>
-                        </p>
-                    </div>
-            
-                    <!-- Job Finder -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Job Finder</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;">
-                            <img src="assets/img/HomePage.png" alt="">
-                        </div>
-                        <br />
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="https://github.com/Sattusss/Job-finder" target="blank">
-                                <strong>Source Code</strong>
-                            </a>
-                        </div>
-                        <p style="margin: 20px; font-size: small; font-weight: bold;">
-                            A platform helping job seekers find roles based on skills and location.
-                        </p>
-                        <p style="margin: 20px; font-size: small;">
-                            <b>Python, Django, Django REST Framework, HTML, CSS3, Bootstrap4</b>
-                        </p>
-                    </div>
-
-                     <!-- Blog Generator System -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Blog Generator System</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;">
-                            <img src="assets/img/Blog.png" alt="">
-                        </div>
-                        <br />
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="https://github.com/Sattusss/Blog_Generation_System" target="blank">
-                                <strong>Source Code</strong>
-                            </a>
-                        </div>
-                        <p style="margin: 20px; font-size: small; font-weight: bold;">
-                            AI-powered blog generation tool using LLaMA 2, Streamlit, and CTransformers for customizable content creation.
-                        </p>
-                        <p style="margin: 20px; font-size: small;">
-                            <b>Python, LLaMA 2, Streamlit, CTransformers, LangChain</b>
-                        </p>
-                    </div>
-
-                    <!-- Sales Performance Analysis Dashboard -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Sales Performance Analysis Dashboard</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;">
-                            <img src="assets/img/powerbi.png" alt="">
-                        </div>
-                        <br />
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="https://github.com/Sattusss/Global_PowerBI_DashBoard" target="blank">
-                                <strong>Source Code</strong>
-                            </a>
-                        </div>
-                        <p style="margin: 20px; font-size: small; font-weight: bold;">
-                            Dynamic Power BI dashboard providing sales insights across segments using SQL Server and DAX for advanced modeling.
-                        </p>
-                        <p style="margin: 20px; font-size: small;">
-                            <b>Power BI, SQL Server, Power Query, DAX</b>
-                        </p>
-                    </div>
-
-                    <!-- Emotion Detection System -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Emotion Detection System</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;">
-                            <img src="assets/img/emotion.jpeg" alt="">
-                        </div>
-                        <br />
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="https://github.com/Sattusss/Emotion_Detection" target="blank">
-                                <strong>Source Code</strong>
-                            </a>
-                        </div>
-                        <p style="margin: 20px; font-size: small; font-weight: bold;">
-                            Facial emotion recognition system classifying emotions from images using scikit-learn and OpenCV.
-                        </p>
-                        <p style="margin: 20px; font-size: small;">
-                            <b>Python, OpenCV, Scikit-learn, Matplotlib, Seaborn</b>
-                        </p>
-                    </div>
-
-                    <!-- Multiple Disease Prediction System -->
-                    <div class="work__img" style="padding-bottom: 10px; border: 1px solid #ABA9A9;">
-                        <div style="text-align: center;"><strong>Multiple Disease Prediction System</strong></div>
-                        <div class="work__img" style="border-radius:0%; border-bottom:1px solid #ABA9A9; border-top: 1px solid #ABA9A9;">
-                            <img src="assets/img/multi_disease.png" alt="">
-                        </div>
-                        <br />
-                        <div style="text-align: center; margin-top: 10px;">
-                            <a href="https://github.com/Sattusss/Multiple-Disease-Prediction-System" target="blank">
-                                <strong>Source Code</strong>
-                            </a>
-                        </div>
-                        <p style="margin: 20px; font-size: small; font-weight: bold;">
-                            Platform predicting heart disease, diabetes, and Parkinson's using machine learning models in a Streamlit interface.
-                        </p>
-                        <p style="margin: 20px; font-size: small;">
-                            <b>Python, Streamlit, Scikit-learn, Pandas, NumPy, FNN, RNN LSTM</b>
-                        </p>
-                    </div>
-
-            
-                </div>
-            </section>
-            <br /><br /><br />
-
-            <!--===== CONTACT =====-->
-            <section class="contact section" id="contact">
-                <h2 class="section-title">Contact</h2>
-                <div class="contact__container bd-grid">
-                    <div class="contact__info">
-                        <h3 class="contact__subtitle">Write your query</h3>
-                        <span class="contact__text">
-                        <a href="mailto:itssatyam.345@gmail.com"></a>
-                        </span>
-                    </div>
-                <div class="contact__container bd-grid">
-                    <form action="https://formspree.io/f/xdkgobjk" method="POST" class="contact__form">
-                        <input type="text" name="name" placeholder="Name" class="contact__input" required>
-                        <input type="email" name="email" placeholder="Email" class="contact__input" required>
-                        <textarea name="message" cols="0" rows="10" placeholder="Your Message" class="contact__input" required></textarea>
-                        <input type="submit" value="Send Message" class="contact__button">
-                    </form>
-                </div>
-            </section>
-
-            <!--===== FOOTER =====-->
-            <footer class="footer">
-                <p class="footer__title">Satyam Tiwari</p>
-                <div class="footer__social">
-                    <a href="https://www.linkedin.com/in/satyam-tiwari-70210a22b" target="_blank" class="footer__icon" title="Link to linkedin profile"><i class="bx bxl-linkedin"></i></a>
-                    <a href="https://www.facebook.com/sattusss"  target="_blank" class="footer__icon" title="Link to facebook profile"><i class="bx bxl-facebook"></i></a>
-                    <a href="https://www.instagram.com/thesatyamtiwarii/" target="_blank" class="footer__icon" title="Link to instagram profile" ><i class="bx bxl-instagram"></i></a>
-                    <a href="http://x.com/_satyam_345"target="_blank" class="footer__icon" title="Link to twitter profile" ><i class="bx bxl-twitter" ></i></a>
-                    <a href="https://github.com/Sattusss/" target="_blank" class="footer__icon" title="Link to github profile"><i class="bx bxl-github" ></i></a>
-                </div>
-                <p class="footer__copy">&#169; 2021 Satyam Tiwari. All right reserved.</p>
-            </footer>
-
-            <button onclick="topFunction()" id="myBtn" title="Go to top">👆</button>
-
-                
-
-        <!--===== SCROLL REVEAL =====-->
-        <script src="https://unpkg.com/scrollreveal"></script>
-
-        <!--===== MAIN JS =====-->
-        <script src="assets/js/main.js"></script>
-
-        <script src="https://code.iconify.design/2/2.0.3/iconify.min.js"></script>
-    </body>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+  <script src="assets/js/portfolio.js"></script>
+</body>
 </html>
