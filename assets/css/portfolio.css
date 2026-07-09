@@ -353,7 +353,7 @@ h2.section-title {
 .proj__link svg { width: 16px; height: 16px; transition: transform .25s; }
 .proj:hover .proj__link svg { transform: translate(3px,-3px); }
 /* whole-card click target → opens animated flowchart in new tab */
-.proj { cursor: pointer; }
+.proj { cursor: pointer; position: relative; }
 .proj__stretch { position: absolute; inset: 0; z-index: 4; border-radius: var(--radius); }
 .proj__stretch:focus-visible { outline: 2px solid var(--primary); outline-offset: 3px; }
 
@@ -409,6 +409,50 @@ h2.section-title {
 [data-reveal][data-delay="3"] { transition-delay: .24s; }
 [data-reveal][data-delay="4"] { transition-delay: .32s; }
 
+/* ---------- AI neural-net canvas + role badge ---------- */
+.hero__net { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; opacity: .5; }
+.hero__3d { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; pointer-events: none; display: block; }
+.hero > .container { position: relative; z-index: 2; }
+/* keep the hero text/CTA (and the résumé menu inside it) above the stats row */
+.hero > .container.hero__grid { z-index: 5; }
+.hero__role-badge {
+  display: inline-flex; align-items: center; gap: 9px; margin-bottom: 20px;
+  font-family: var(--font-mono); font-size: .78rem; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--primary-ink); background: var(--grad-soft); border: 1px solid var(--border);
+  padding: 8px 15px; border-radius: 999px; box-shadow: var(--shadow-sm);
+}
+.hero__role-badge svg { width: 16px; height: 16px; }
+
+/* ---------- résumé dropdown ---------- */
+.resume-dd { position: relative; display: inline-flex; }
+.resume-dd .dd-caret { width: 15px; height: 15px; transition: transform .25s; }
+.resume-dd.open .dd-caret { transform: rotate(180deg); }
+.resume-menu {
+  position: absolute; top: calc(100% + 10px); left: 0; z-index: 30;
+  min-width: min(300px, 84vw); padding: 8px; display: grid; gap: 3px;
+  background: var(--surface); border: 1px solid var(--border-strong); border-radius: var(--radius-sm);
+  box-shadow: var(--shadow);
+  opacity: 0; visibility: hidden; transform: translateY(-8px) scale(.98); transform-origin: top left;
+  transition: opacity .22s ease, transform .22s ease, visibility .22s;
+}
+.resume-dd.open .resume-menu { opacity: 1; visibility: visible; transform: none; }
+.resume-group {
+  font-family: var(--font-mono); font-size: .64rem; letter-spacing: .14em; text-transform: uppercase;
+  color: var(--faint); padding: 9px 12px 4px;
+}
+.resume-item { display: flex; align-items: center; gap: 12px; padding: 10px 12px; border-radius: 12px; transition: background .2s; }
+.resume-item:hover { background: var(--surface-2); }
+.ri-flag {
+  flex: none; width: 36px; height: 30px; border-radius: 8px; display: grid; place-items: center;
+  font-family: var(--font-mono); font-weight: 700; font-size: .72rem; color: #fff; background: var(--grad);
+  box-shadow: var(--shadow-sm);
+}
+.ri-txt { flex: 1; line-height: 1.3; }
+.ri-txt b { display: block; color: var(--heading); font-size: .92rem; }
+.ri-txt small { color: var(--muted); font-size: .75rem; }
+.ri-go { color: var(--primary-ink); display: grid; place-items: center; }
+.ri-go svg { width: 16px; height: 16px; }
+
 /* ---------- Responsive ---------- */
 @media (max-width: 980px) {
   .hero__grid { grid-template-columns: 1fr; gap: 30px; }
@@ -443,7 +487,11 @@ h2.section-title {
   .nav__burger { width: 38px; height: 38px; }
   .hero { padding-top: 120px; }
   .hero__cta { width: 100%; }
-  .hero__cta .btn { flex: 1 1 auto; justify-content: center; }
+  .hero__cta > .btn { flex: 1 1 auto; justify-content: center; }
+  .hero__cta .resume-dd { flex: 1 1 auto; }
+  .resume-dd > .btn { width: 100%; justify-content: center; }
+  .resume-menu { left: 50%; transform: translate(-50%, -8px); transform-origin: top center; }
+  .resume-dd.open .resume-menu { transform: translateX(-50%); }
   .stats { grid-template-columns: 1fr 1fr; gap: 12px; }
 }
 @media (prefers-reduced-motion: reduce) {

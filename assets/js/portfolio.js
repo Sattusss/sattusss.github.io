@@ -36,6 +36,9 @@
       "brand.sub": "AI · LLM · ML Engineer",
       "hero.status": "Open to AI / LLM / ML Engineer roles",
       "hero.boot": "System Online · AI Engineer",
+      "hero.role1": "AI · Machine Learning Engineer",
+      "resume.en": "English",
+      "resume.jp": "Japanese · 日本語",
       "hero.hi": "Hi, I'm",
       "hero.lead": "I build production <strong>NLP, speech &amp; multilingual LLM</strong> systems - from research PoC to deployed, low-latency services. Based in Tokyo 🇯🇵, working across bilingual JP/EN teams.",
       "hero.cta1": "View My Work", "hero.cta2": "Download Résumé",
@@ -70,6 +73,9 @@
       "brand.sub": "AI・LLM・MLエンジニア",
       "hero.status": "AI / LLM / ML エンジニアのポジションを募集中",
       "hero.boot": "システム起動 · AIエンジニア",
+      "hero.role1": "AI・機械学習エンジニア",
+      "resume.en": "英語 · English",
+      "resume.jp": "日本語",
       "hero.hi": "こんにちは、",
       "hero.lead": "<strong>音声・多言語NLP・LLM</strong> を軸に、研究PoCから低レイテンシな実運用サービスまでを一気通貫で開発しています。東京 🇯🇵 を拠点に、日英バイリンガルのチームで活動中。",
       "hero.cta1": "実績を見る", "hero.cta2": "履歴書をダウンロード",
@@ -498,12 +504,69 @@
     document.querySelectorAll("[data-icon]").forEach(n => { n.innerHTML = I[n.dataset.icon] || ""; });
   }
 
+  /* résumé download dropdown */
+  function bindResumeDropdown() {
+    const dd = el("resume-dd"); if (!dd) return;
+    const btn = el("resume-btn");
+    const close = () => { dd.classList.remove("open"); btn.setAttribute("aria-expanded", "false"); };
+    btn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      const open = dd.classList.toggle("open");
+      btn.setAttribute("aria-expanded", open ? "true" : "false");
+    });
+    document.addEventListener("click", (e) => { if (!dd.contains(e.target)) close(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape") close(); });
+    dd.querySelectorAll("a").forEach(a => a.addEventListener("click", close));
+  }
+
+  /* ambient AI neural-network canvas (hero) */
+  function aiNet() {
+    const canvas = el("ai-net"); if (!canvas) return;
+    if (getComputedStyle(canvas).display === "none") return; // WebGL 3D hero took over
+    const ctx = canvas.getContext("2d");
+    const host = canvas.parentElement;
+    const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let w, h, dpr, nodes = [], raf;
+    function size() {
+      dpr = Math.min(devicePixelRatio || 1, 2);
+      w = host.clientWidth; h = host.clientHeight;
+      canvas.width = w * dpr; canvas.height = h * dpr;
+      canvas.style.width = w + "px"; canvas.style.height = h + "px";
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      const count = Math.min(54, Math.round((w * h) / 24000));
+      nodes = Array.from({ length: count }, () => ({
+        x: Math.random() * w, y: Math.random() * h,
+        vx: (Math.random() - .5) * .24, vy: (Math.random() - .5) * .24,
+        r: Math.random() * 1.6 + .7
+      }));
+    }
+    function frame() {
+      ctx.clearRect(0, 0, w, h);
+      for (const n of nodes) {
+        n.x += n.vx; n.y += n.vy;
+        if (n.x < 0 || n.x > w) n.vx *= -1;
+        if (n.y < 0 || n.y > h) n.vy *= -1;
+      }
+      for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i], b = nodes[j], d = Math.hypot(a.x - b.x, a.y - b.y);
+        if (d < 124) { ctx.strokeStyle = `rgba(229,70,80,${(1 - d / 124) * .3})`; ctx.lineWidth = 1;
+          ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke(); }
+      }
+      for (const n of nodes) { ctx.beginPath(); ctx.arc(n.x, n.y, n.r, 0, 6.3);
+        ctx.fillStyle = "rgba(255,95,105,.7)"; ctx.fill(); }
+      raf = requestAnimationFrame(frame);
+    }
+    size(); frame();
+    if (reduce) cancelAnimationFrame(raf);
+    addEventListener("resize", size);
+  }
+
   /* ---------------- init ---------------- */
   function init() {
     injectIcons();
     applyStatic();
     renderStats(); renderMarquee(); renderSkills(); renderExp(); renderProjects(); renderEdu(); renderLangs();
-    bindNav(); bindFilters(); bindLangToggle(); bindSpotlight();
+    bindNav(); bindFilters(); bindLangToggle(); bindSpotlight(); bindResumeDropdown(); aiNet();
     movePill(); typewriter(); initReveal(); runCounters(); animateBars();
     // restart typewriter when language changes - handled in setLang via re-render of roles
   }
